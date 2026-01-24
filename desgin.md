@@ -32,3 +32,18 @@ const boardData = {
     }
 }
 ```
+
+### Why This Structure?
+
+**Reasons**
+- Each task stored in one place only in the tasks object.
+- To find any task, I can access it by Id without searching through columns.
+- When moving a task I only change the taskIds array, the task object stays the same.
+
+
+**Alternative I considered**
+- Putting tasks directly inside each column.
+
+**Why I rejected it**
+- To find a specific task, I need to search through every column.
+- Moving a task means removing it from one array and adding it to another one.
