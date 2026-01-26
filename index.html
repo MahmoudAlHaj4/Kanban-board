@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Boards</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <div class="main-container">
+      
+        <div class="main-area">
+            <div class="header">
+                <div class="header-content">
+                    <h1>Actions</h1>
+                    <div class="header-actions">
+                        <span class="view-toggle">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7"/>
+                                <rect x="14" y="3" width="7" height="7"/>
+                                <rect x="14" y="14" width="7" height="7"/>
+                                <rect x="3" y="14" width="7" height="7"/>
+                            </svg>
+                            All
+                        </span>
+                        <span class="view-count">5 views</span>
+                    </div>
+                </div>
+                <div class="toolbar">
+                    <button class="btn-primary" id="newActionBtn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                        New Action
+                    </button>
+                    <button class="btn-secondary">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+                        </svg>
+                        Filter
+                    </button>
+                    <button class="btn-secondary">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                            <line x1="3" y1="12" x2="21" y2="12"/>
+                            <line x1="3" y1="18" x2="21" y2="18"/>
+                        </svg>
+                        Ordering
+                    </button>
+                </div>
+            </div>
+            <div class="columns" id="board"></div>
+        </div>
+    </div>
+
+    <script src="./scripts/data.js"></script>
+    <script src="./scripts/render.js"></script>
+    <script src="./scripts/app.js"></script>
+</body>
+</html>
