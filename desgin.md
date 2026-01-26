@@ -8,16 +8,21 @@ const boardData = {
     columns : [
         {
             id: 'col-1',
+            title : 'Backlog',
+            taskIds: ['task-1','task-2']
+        },
+        {
+            id: 'col-2',
             title : 'To Do',
             taskIds: ['task-1','task-2','task-3']
         },
         {
-            id: 'col-2',
+            id: 'col-3',
             title : 'In Progress',
             taskIds: ['task-4']
         },
         {
-            id : 'col-3',
+            id : 'col-4',
             title: 'Done',
             taskIds: []
         }
