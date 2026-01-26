@@ -8,16 +8,21 @@ const boardData = {
     columns : [
         {
             id: 'col-1',
+            title : 'Backlog',
+            taskIds: ['task-1','task-2']
+        },
+        {
+            id: 'col-2',
             title : 'To Do',
             taskIds: ['task-1','task-2','task-3']
         },
         {
-            id: 'col-2',
+            id: 'col-3',
             title : 'In Progress',
             taskIds: ['task-4']
         },
         {
-            id : 'col-3',
+            id : 'col-4',
             title: 'Done',
             taskIds: []
         }
@@ -89,7 +94,7 @@ kanban-board/
 
 ## Features (V1)
 
-- 3 columns: To Do, In Progress, Done
+- 4 columns: Backlog, To Do, In Progress, Done
 - Create new tasks with title and description
 - Delete tasks
 - Drag and drop tasks between columns
