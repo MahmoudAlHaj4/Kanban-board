@@ -50,4 +50,24 @@ modal.addEventListener('click', (event)=>{
 
 
 
+board.addEventListener('click' ,(event)=>{
+    if(event.target.tagName === 'BUTTON') {
+        const button = event.target
+        const taskToDelete = button.parentElement
+        const id = taskToDelete.dataset.id
 
+        if(button.className === 'delete-btn'){
+            // const task = boardData.tasks[id]
+            delete boardData.tasks[id]
+
+            const deleteFromColumn = boardData.columns.find((column)=> {
+                return column.taskIds.includes(id)
+            })
+            deleteFromColumn.taskIds = deleteFromColumn.taskIds.filter((taskId)=>{
+                return taskId !== id
+            })
+            saveTasks()
+           
+        }
+    }
+})
