@@ -1,3 +1,26 @@
+// How Add Tasks Works:
+// 1. User click on NewAction button -> modal shows.
+// 2. User fills in title and description.
+// 3. User clicks Submit Button .
+// 4. Validate: if inputs empty → show red border.
+// 5. If valid:
+//    - Create unique ID using Date.now().
+//    - Create new task object with id, title, description, createdAt.
+//    - Add task to boardData.tasks[newId].
+//    - Add newId to boardData.columns[0].taskIds (Backlog column).
+//    - Re-render board with displayBoard().
+//    - Clear inputs and hide modal.
+//
+// HOW DELETE TASK WORKS (using event delegation):
+// 1. One listener on board (parent) listens for ALL clicks.
+// 2. Check if clicked element is a button with 'delete-btn' class.
+// 3. Get the parent task card (contains the data-id).
+// 4. Get the task ID from taskCard.dataset.id.
+// 5. Delete task from boardData.tasks using 'delete' operator.
+// 6. Find which column contains this task ID using .find().
+// 7. Remove task ID from column's taskIds array using .filter().
+// 8. Re-render board with displayBoard().
+
 const addBtn = document.getElementById('newActionBtn')
 const modal = document.querySelector('.modal')
 const titleInput = document.getElementById('taskTitle')
