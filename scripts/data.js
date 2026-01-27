@@ -1,3 +1,6 @@
+// Kanban board data structure.
+// See design.md for detailed rationale and architecture decisions.
+
 const boardData = {
     columns: [
         {

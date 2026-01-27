@@ -1,3 +1,35 @@
+// render.js file handle  rendering the Kanban board to the DOM.
+
+// Functions:
+// createTask(task): Creates HTML for a single task card.
+// createColumns(column): Creates HTML for a column with its tasks.
+// displayBoard(): Renders the entire board by looping through all columns.
+
+
+// How The Render Works: 
+// Start displayBoard() is called:
+// 1. Empty the baord so Don't show Duplicate.
+// 2. Loop through all columns in baordData.columns.
+// 3. For each column, create a variable columnElement that calls createColumns(column).
+// 
+// Now go to createColumns(column):
+// 4. Create the HTML for the column (the box, title, icon, number count).
+// 5. Loop through column.taskIds (the list of task IDs).
+// 6. For each task ID, get the actual task data: task = boardData.tasks[taskId].
+// 7. Create a variable taskCard that calls createTask(task).
+//
+// Now go to createTask(task):
+// 8. Create the HTML for one task (box with title, description, date).
+// 9. Give back the task HTML.
+//
+// Go back:
+// 10. Put the task HTML inside the column.
+// 11. After all tasks are done, give back the complete column HTML.
+// 12. Put the column on the board.
+//
+// Done! The board shows all columns with all their tasks.
+
+
 const board = document.getElementById('board')
 
 const createTask = (task) => { 
