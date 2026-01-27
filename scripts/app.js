@@ -57,7 +57,6 @@ board.addEventListener('click' ,(event)=>{
         const id = taskToDelete.dataset.id
 
         if(button.className === 'delete-btn'){
-            // const task = boardData.tasks[id]
             delete boardData.tasks[id]
 
             const deleteFromColumn = boardData.columns.find((column)=> {
@@ -66,7 +65,7 @@ board.addEventListener('click' ,(event)=>{
             deleteFromColumn.taskIds = deleteFromColumn.taskIds.filter((taskId)=>{
                 return taskId !== id
             })
-            saveTasks()
+            displayBoard()
            
         }
     }
