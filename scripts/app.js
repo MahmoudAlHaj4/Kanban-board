@@ -93,7 +93,7 @@ board.addEventListener('click' ,(event)=>{
     if(event.target.tagName === 'BUTTON') {
         const button = event.target
         const taskToDelete = button.parentElement
-        const id = taskToDelete.dataset.id
+        const id = Number(taskToDelete.dataset.id)
 
         if(button.className === 'delete-btn'){
             delete boardData.tasks[id]
