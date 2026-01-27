@@ -27,6 +27,23 @@ const titleInput = document.getElementById('taskTitle')
 const descriptionInput = document.getElementById('taskDescription')
 
 
+const saveBoardData = ()=>{
+    localStorage.setItem('boardData', JSON.stringify(boardData))
+}
+
+
+const loadBoardData = ()=>{
+    const saved = localStorage.getItem('boardData')
+    return saved ? JSON.parse(saved) : null
+}
+const savedData = loadBoardData()
+
+if(savedData){
+    boardData.columns = savedData.columns  
+    boardData.tasks = savedData.tasks 
+}
+displayBoard()
+
 addBtn.addEventListener('click',()=>{
     modal.style.display = 'inline'
 })
@@ -50,8 +67,7 @@ modal.addEventListener('click', (event)=>{
         titleInput.value = ''
         descriptionInput.value = ''
         modal.style.display = 'none'
-        console.log(boardData)
-     
+        saveBoardData()
         displayBoard()
     }else{
         titleInput.style.border = '1px solid red'
@@ -88,6 +104,7 @@ board.addEventListener('click' ,(event)=>{
             deleteFromColumn.taskIds = deleteFromColumn.taskIds.filter((taskId)=>{
                 return taskId !== id
             })
+            saveBoardData()
             displayBoard()
            
         }
