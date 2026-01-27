@@ -35,13 +35,17 @@ const board = document.getElementById('board')
 const createTask = (task) => { 
     const taskContainer = document.createElement('div')
     taskContainer.className = 'task-card'
+    taskContainer.dataset.id = task.id
     const title = document.createElement('h3')
     title.textContent = task.title
     const description = document.createElement('p')
     description.textContent = task.description
     const time = document.createElement('span')
     time.textContent = task.createdAt
-
+    const deleteButton = document.createElement('button')
+    deleteButton.className = 'delete-btn' 
+    deleteButton.textContent = 'X'
+    taskContainer.appendChild(deleteButton)
     taskContainer.appendChild(title)
     taskContainer.appendChild(description)
     taskContainer.appendChild(time)
@@ -93,6 +97,7 @@ const displayBoard = () => {
         const columnElement = createColumns(column)
         board.appendChild(columnElement)
     })
+  
 }
 
 displayBoard()
