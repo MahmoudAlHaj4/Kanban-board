@@ -36,20 +36,27 @@ const createTask = (task) => {
     const taskContainer = document.createElement('div')
     taskContainer.className = 'task-card'
     taskContainer.dataset.id = task.id
+    taskContainer.draggable = true
+    
+
     const title = document.createElement('h3')
     title.textContent = task.title
+
     const description = document.createElement('p')
     description.textContent = task.description
+
     const time = document.createElement('span')
     time.textContent = task.createdAt
+
     const deleteButton = document.createElement('button')
     deleteButton.className = 'delete-btn' 
     deleteButton.textContent = 'X'
+
     taskContainer.appendChild(deleteButton)
     taskContainer.appendChild(title)
     taskContainer.appendChild(description)
     taskContainer.appendChild(time)
-
+    makeDraggable(taskContainer , task.id)
     return taskContainer
 }
 
@@ -87,6 +94,7 @@ const createColumns = (column) => {
     columnHeader.appendChild(columnTitleContainer)
     columnContainer.appendChild(columnHeader)
     columnContainer.appendChild(taskContainer)
+    makeDroppable(columnContainer , column.id)
 
     return columnContainer
 }
