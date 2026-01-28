@@ -9,21 +9,25 @@ const boardData = {
         {
             id: 'col-1',
             title : 'Backlog',
+            color: '#6B7280',   // Color for column visual indicator
             taskIds: ['task-1','task-2']
         },
         {
             id: 'col-2',
             title : 'To Do',
+            color: '#EF4444',
             taskIds: ['task-1','task-2','task-3']
         },
         {
             id: 'col-3',
             title : 'In Progress',
+            color: '#F59E0B',
             taskIds: ['task-4']
         },
         {
             id : 'col-4',
             title: 'Done',
+            color: '#10B981',
             taskIds: []
         }
     ],
