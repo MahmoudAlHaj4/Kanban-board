@@ -273,25 +273,6 @@ body {
     font-weight: 600;
 }
 
-.add-btn {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    border: none;
-    color: #9ca3af;
-    font-size: 1.25rem;
-    cursor: pointer;
-    border-radius: 0.25rem;
-    transition: all 0.15s ease;
-}
-
-.add-btn:hover {
-    background: #f3f4f6;
-    color: #4b5563;
-}
 
 /* ==================== TASK CARDS ==================== */
 
@@ -330,38 +311,6 @@ body {
     line-height: 1.5;
 }
 
-.task-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.task-meta {
-    display: flex;
-    align-items: center;
-    gap: 0.375rem;
-    font-size: 0.75rem;
-    color: #6b7280;
-}
-
-.task-meta svg {
-    width: 14px;
-    height: 14px;
-    color: #9ca3af;
-}
-
-.task-meta span {
-    font-weight: 500;
-}
-
-.priority-tag {
-    background: #FEE2E2;
-    color: #991B1B;
-    padding: 0.125rem 0.5rem;
-    border-radius: 0.25rem;
-    font-weight: 600;
-}
-
 /* ==================== AVATARS ==================== */
 
 .avatar, .avatar-group .avatar {
@@ -386,9 +335,6 @@ body {
 .avatar.green { background: #10B981; }
 .avatar.yellow { background: #F59E0B; }
 .avatar.mint { background: #34D399; }
-
-
-/* ==================== MODAL STYLES ==================== */
 
 .modal {
     display: none;
@@ -479,8 +425,7 @@ body {
 }
 
 .form-group input,
-.form-group textarea,
-.form-group select {
+.form-group textarea {
     width: 100%;
     padding: 0.625rem 0.875rem;
     border: 1px solid #e5e7eb;
@@ -501,12 +446,6 @@ body {
 .form-group textarea {
     resize: vertical;
     font-family: inherit;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
 }
 
 .modal-footer {
