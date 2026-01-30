@@ -52,6 +52,13 @@ const createTask = (task) => {
     deleteButton.className = 'delete-btn' 
     deleteButton.textContent = 'X'
 
+    const colors = ['orange', 'red', 'blue', 'green' , 'purple']
+    const randomColor = colors[Math.floor(Math.random() * colors.length)]
+    
+    const Avatar = document.createElement('div')
+    Avatar.className = `avatar ${randomColor}`
+
+    taskContainer.appendChild(Avatar)
     taskContainer.appendChild(deleteButton)
     taskContainer.appendChild(title)
     taskContainer.appendChild(description)
