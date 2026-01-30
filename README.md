@@ -2,7 +2,7 @@
 
 A Kanban board application that allows users to organize and manage their tasks across different workflow stages using drag-and-drop functionality.
 
-![Screenshot](screenshot.png)
+![Screenshot](Screenshot.png)
 
 ## Features
 
