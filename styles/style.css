@@ -275,7 +275,6 @@ body {
 
 
 /* ==================== TASK CARDS ==================== */
-
 .tasks {
     display: flex;
     flex-direction: column;
@@ -287,8 +286,30 @@ body {
     border: 1px solid #e5e7eb;
     border-radius: 0.5rem;
     padding: 0.875rem;
+    padding-top: 0.625rem;
     cursor: pointer;
     transition: all 0.15s ease;
+    position: relative;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: #ffffff;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+    opacity: 0;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .task-card:hover {
@@ -296,45 +317,59 @@ body {
     border-color: #d1d5db;
 }
 
+.task-card:hover .delete-btn {
+    opacity: 1;
+}
+
+.delete-btn:hover {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+/* Avatar as status indicator - top left */
+.task-card .avatar {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
 .task-card h3 {
     font-size: 0.875rem;
     font-weight: 600;
     color: #111827;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
     line-height: 1.25;
+    padding-left: 1rem; /* Space for the avatar dot */
+    padding-right: 1.5rem; /* Space for delete button */
 }
 
 .task-card p {
     font-size: 0.75rem;
     color: #6b7280;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     line-height: 1.5;
 }
 
-/* ==================== AVATARS ==================== */
-
-.avatar, .avatar-group .avatar {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-
-.avatar-group {
-    display: flex;
+.task-card span {
+    display: inline-block;
+    font-size: 0.688rem;
+    color: #9ca3af;
+    font-weight: 500;
+    margin-top: 0.25rem;
 }
 
 /* Avatar Colors */
 .avatar.orange { background: #F97316; }
 .avatar.red { background: #EF4444; }
-.avatar.pink { background: #EC4899; }
 .avatar.blue { background: #3B82F6; }
 .avatar.purple { background: #8B5CF6; }
-.avatar.gray { background: #6B7280; }
-.avatar.teal { background: #14B8A6; }
 .avatar.green { background: #10B981; }
-.avatar.yellow { background: #F59E0B; }
-.avatar.mint { background: #34D399; }
+
+/* ==================== MODAL STYLES ==================== */
 
 .modal {
     display: none;
@@ -342,16 +377,16 @@ body {
     z-index: 1000;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(4px);
 }
 
 .modal.show {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
 }
 
 .modal-content {
@@ -361,6 +396,10 @@ body {
     max-width: 500px;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     animation: slideIn 0.2s ease-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 @keyframes slideIn {
