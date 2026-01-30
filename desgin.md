@@ -96,6 +96,24 @@ kanban-board/
 - If I need to change how data is stored, I only touch data.js.
 
 
+## Key Technical Decisions
+
+### 1. Vanilla JavaScript
+**Reason:** To deeply understand JavaScript fundamentals and maintain full control over the code.
+
+### 2. Event Delegation
+**Reason:** For performance and memory efficiency, instead of creating 100 listeners (one per task), create 1 listener on the parent container. Event bubbling allows us to catch events from child elements automatically.
+
+### 3. Normalized Data Structure
+**Reason:** Better time complexity - instead of looping through all columns to find a task, I can access it directly using the task ID (O(1) instead of O(n)).
+
+### 4. Date.now() for Unique IDs
+**Reason:** Generates guaranteed unique IDs without needing to track counters or check existing IDs.
+
+### 5. localStorage for Persistence
+**Reason:** Simple to implement, no backend or database required. Suitable for client-side projects where data stays in the user's browser.
+
+
 ## Features (V1)
 
 - 4 columns: Backlog, To Do, In Progress, Done
